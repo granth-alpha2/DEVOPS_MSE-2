@@ -18,19 +18,22 @@
 │   4. Reports & Records (SHC/PDF) │   4. FPO Group Aggregation      │   • Draggable & Resizable UI│
 │                                  │   5. CACP MSP Floor Guarantee   │   • 4 Dedicated Persona Desks
 ├──────────────────────────────────┴─────────────────────────────────┴─────────────────────────────┤
+│ 🏛️ 100% Middleman Removal Architecture (Direct Govt FCI MSP Intake, 12-Digit Token & Iris DBT)   │
+│ 💬 Multilingual Negotiation Chat with Live Translation · 📦 Wholesale Request Basket & Escrow   │
 │ 🇮🇳 11 Indian Languages · 💻💻 Dual-Laptop Live SIH Demo Mode · ⚡ 1-Click Fast Instant Login       │
-│ 🧠 RF Yield Model (R²=0.9601) · 📈 Ridge+GBR Price Forecaster (R²=0.9733) · 🧪 Soil NPK Engine    │
+│ 🧠 RF Yield Model (R²=0.9601) · 📈 Ridge+GBR Price Forecaster (R²=0.9733) · 🧪 3-Layer Soil STCR  │
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **4 Structured Government Service Pillars:** Farm Services, Crop Services, Market Services, and Official Reports & Records formatted to digital public infrastructure standards.
-- **5-Channel Transparent Marketplace:** Direct trade, FCI official MSP procurement with 12-digit gate passcodes & biometric DBT disbursal, APEDA export gateway, and FPO group pooling.
-- **Unnati AI (उन्नति AI) Assistant:** Draggable, 8-direction resizable floating popup assistant powered by Google Gemini 2.5 Flash (`gemini-2.5-flash`), with system file photo picker, drag-and-drop, clipboard paste, vernacular voice recognition, Hindi/English speech synthesis, and leaf disease diagnosis.
+- **100% Middleman (*Arhtiya*) Disintermediation:** Direct Government-to-Farmer procurement eliminates 2.5%–8% commission cuts through 12-digit gate passcodes, UIDAI Iris biometric verification, digital weighbridge gross/tare logging, and 100% Direct Benefit Transfer (DBT / PFMS) settlement within 24–48 hours.
+- **5-Channel Transparent Marketplace:** Direct trade, official FCI MSP intake, APEDA international export gateway with 10-country FOB benchmarks, FPO cooperative bulk aggregation, and CACP MSP statutory floor protection.
+- **Multilingual Trade Negotiation Chat:** Built-in real-time chat with automatic translation between 11 Indian languages, allowing farmers and institutional buyers to negotiate directly without linguistic brokers.
+- **Unnati AI (उन्नति AI) Assistant:** Draggable, 8-direction resizable floating popup assistant powered by Google Gemini 2.5 Flash (`gemini-2.5-flash`), with system file photo picker (`📁 Add Photo`), drag-and-drop, clipboard paste, vernacular voice recognition, Hindi/English speech synthesis, and leaf disease diagnosis.
 - **4-Part Hedged Portfolio Optimizer:** Modern Portfolio Theory (MPT / Markowitz) applied to agriculture, dynamically splitting land between Primary High-Profit, Low-Risk Hedged (MSP), Fast Cash, and Climate-Resilient Legume crops.
+- **3-Layer Depth Soil Health & STCR Fertilizer Engine:** Comprehensive analysis across Layer 1 (0–15cm), Layer 2 (15–30cm), and Layer 3 (30–60cm) with ICAR STCR quadratic equations for exact Urea, DAP, MOP, SSP, and Zinc dosages.
 - **Dual-Laptop Live Demonstration System:** Seamless multi-workstation flow (Laptop 1: Farmer produces & registers harvest; Laptop 2: FCI Officer scans biometric & disburses funds).
 - **1-Click Instant Persona Logins:** Pre-configured profiles for Farmers (Ramesh Kumar), FCI Mandi Officers (Officer S. Sharma), APEDA Exporters, and Agribusiness Buyers with zero SMS or password friction.
 - **Robust Multi-Device LAN Compatibility:** Guests see a clear `🔐 Sign in` button; authenticated users see their profile and an instant `Sign out` button; visiting `/login` is never blocked or redirected.
-- **Vernacular & Accessible:** Supports 11 Indian languages, screen reader page narrator, high-contrast mode, eye-care filter, and adjustable text scaling.
 - **Machine Learning & Telemetry:** Python FastAPI microservice delivering Random Forest Crop Yield predictions ($R^2 = 0.9601$), Ensemble Mandi Price forecasts ($R^2 = 0.9733$), and Soil Fertilizer rebalancing.
 
 ---
@@ -40,9 +43,10 @@
 ### The Problem
 Over 85% of Indian farmers are smallholders operating on intuition, word-of-mouth, or last season's prices. This causes:
 1. **Cobweb Glut-and-Crash Cycles:** Over-cultivation of single popular crops leading to catastrophic post-harvest price collapses.
-2. **Asymmetric Market Intermediation:** Farmers receiving only 30–40% of consumer end-prices due to multi-tiered middleman markups (*arhtiyas*).
-3. **MSP Procurement Hurdles:** Farmers traveling long distances to mandis only to face arbitrary moisture rejections or delayed payments.
-4. **Export Inaccessibility:** Inability for small farmers to tap into high-margin global demand due to quality grading and minimum volume thresholds.
+2. **Exploitative Middlemen (*Arhtiyas*):** Commission agents taking 2.5% to 8% cuts, controlling queue entry, manipulating weighbridge scales, and enforcing arbitrary moisture deductions.
+3. **Asymmetric Market Intermediation:** Farmers receiving only 30–40% of consumer end-prices due to multi-tiered middleman markups.
+4. **MSP Procurement Hurdles:** Farmers traveling long distances to mandis only to face middleman gatekeepers, proxy sellers, and delayed payments (15–45 days).
+5. **Export Inaccessibility:** Inability for small farmers to tap into high-margin global demand due to quality grading and minimum volume thresholds.
 
 ### The AgriProfit Solution
 AgriProfit connects the entire agricultural lifecycle into a single closed loop:  
@@ -50,7 +54,86 @@ AgriProfit connects the entire agricultural lifecycle into a single closed loop:
 
 ---
 
-## 2. Platform Architecture: The 4 Core Service Pillars
+## 2. 🏛️ Government-to-Farmer Disintermediation: Middleman Removal Architecture
+
+In conventional APMC (*Agricultural Produce Market Committee*) mandis, smallholder farmers are systematically exploited by local commission agents (*arhtiyas* / middlemen). Middlemen extract exorbitant commissions (2.5% to 8%), corner gate queue access, force unscientific moisture price cuts (₹200–₹500 per quintal), and delay bank payments for 15 to 45 days.
+
+AgriProfit introduces a **production-ready, 100% disintermediated procurement pipeline** connecting farmers directly with official Food Corporation of India (FCI), NAFED, and State Civil Supplies Mandi Procurement Terminals:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        AGRIPROFIT DIRECT GOVT-TO-FARMER DISINTERMEDIATION PIPELINE                     │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                        │
+│   [🌾 FARMER AT HOME: /marketplace/msp]                                                                │
+│            │ 1. Submits harvest delivery slot: Crop, Estimated Quintals, Moisture %, Preferred Center  │
+│            │    • Linked to registered PostGIS land polygon (Prevents ghost registrations)             │
+│            ▼                                                                                           │
+│   [🏛️ OFFICIAL FCI MANDI TERMINAL: /marketplace/government]                                            │
+│            │ 2. Mandi Officer reviews farm dossier, validates crop quota vs cadastral land size        │
+│            │ 3. Approves slot -> Generates unforgeable, single-use 12-Digit Numeric Passcode           │
+│            ▼                                                                                           │
+│   [📲 12-DIGIT PRIORITY GATE PASSCODE DELIVERED TO FARMER APP]                                         │
+│            │ 4. Farmer arrives at Mandi gate with tractor — bypasses broker holding yards             │
+│            │ 5. Gate terminal verifies 12-digit code for instant, guaranteed entry                     │
+│            ▼                                                                                           │
+│   [👁️ UIDAI IRIS BIOMETRIC AUTHENTICATION: /api/marketplace/msp/biometric/verify]                      │
+│            │ 6. On-site biometric eye scan confirms genuine farmer identity                            │
+│            │    • Completely eliminates proxy sellers, arhtiya syndicates, and bogus quota claims      │
+│            ▼                                                                                           │
+│   [⚖️ AUTOMATED WEIGHBRIDGE & FCI MOISTURE ASSAY: /api/marketplace/msp/procure]                        │
+│            │ 7. Gross & tare truck weight captured digitally in the procurement terminal               │
+│            │ 8. Strict FCI <12% standard applied transparently (Zero arbitrary broker cuts)           │
+│            ▼                                                                                           │
+│   [💳 100% DIRECT BENEFIT TRANSFER (PFMS / DBT)]                                                       │
+│            │ 9. Treasury sanction settles 100% gross payout directly into farmer's bank account        │
+│            │    • 0% Commission Cut (Zero broker cut). Settled via DBT within 24–48 hours.             │
+│            ▼                                                                                           │
+│   [📑 IMMUTABLE DIGITAL PROCUREMENT RECEIPT: ProcurementReceiptModal.tsx]                              │
+│            │ 10. Official downloadable Government receipt with unique Payment ID, QR & Treasury Stamp  │
+│                                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The 6-Stage Middleman Disintermediation Protocol
+
+1. **Pre-Harvest Slot Reservation & PostGIS Cadastral Binding (`MspRequestModal.tsx`):**
+   - In traditional mandis, commission agents hoard procurement quotas by creating fake paper slips for non-existent farms.
+   - AgriProfit binds every MSP procurement request to the farmer's verified **PostGIS geospatial land polygon** and historical yield estimates. A farmer cannot request procurement for more quintals than their registered acreage can physically produce, permanently eliminating paper hoarding.
+2. **Cryptographic 12-Digit Passcode Issuance (`/api/marketplace/msp/approve`):**
+   - Once the Mandi Officer reviews the farm dossier and approves the slot, AgriProfit issues a unique, single-use **12-digit numeric passcode** (e.g. `9481 0274 5519`) directly to the farmer's dashboard.
+   - This replaces handwritten broker tokens and guarantees the farmer an immutable timestamped entry slot.
+3. **Bypassing the Broker Yard via Gate Token Verification (`/api/marketplace/msp/verify-code`):**
+   - In conventional setups, middlemen physically block mandi gates, forcing farmers to park in private yards where they are charged extortionate parking and holding fees.
+   - With AgriProfit, the farmer drives their tractor directly to the official intake gate. The gate officer enters the 12-digit code into the terminal station, immediately pulling up the farmer's pre-approved quota and dispatch authorization.
+4. **UIDAI Iris / Biometric Proof of Presence (`/api/marketplace/msp/biometric/verify`):**
+   - Middlemen frequently use fake Aadhaar photocopies to sell cheap open-market grain at high MSP rates.
+   - AgriProfit integrates on-site biometric eye/iris scanning (`UIDAI Iris Adapter v1.2`). The farmer must verify their physical identity at the procurement station, ensuring that only the actual cultivator receives the government subsidy.
+5. **Digital Weighbridge Gross/Tare Logging & Transparent Quality Formula:**
+   - Middlemen often manipulate mechanical weighing scales by 3%–5% (*dharat* skimming) and levy subjective moisture deductions of ₹200–₹500 per quintal.
+   - AgriProfit takes direct inputs from digital truck weighbridges (Gross Weight minus Empty Tare Weight) and applies the statutory Food Corporation of India (FCI) moisture formula:
+     $$\text{Permissible Net Weight} = \text{Gross Weighed} \times \left[ 1 - \max\left(0, \frac{\text{Moisture} - 12\%}{100}\right) \right]$$
+   - All deductions are logged transparently and displayed on the terminal screen in real time.
+6. **100% Direct Benefit Transfer (DBT / PFMS) & Digital Receipt (`ProcurementReceiptModal.tsx`):**
+   - Payment never passes through any intermediary bank account or commission agent ledger.
+   - The entire gross payout ($\text{Actual Net Quintals} \times \text{Statutory MSP Rate}$) is sanctioned directly into the farmer's Aadhaar-linked bank account through PFMS / DBT within 24–48 hours.
+   - The platform instantly generates an immutable, printable **National Digital Procurement Receipt** complete with Treasury Reference ID, Weighbridge Slip, Biometric Verification Hash, and Officer Authorization Seal.
+
+### Traditional APMC vs. AgriProfit Direct Government Pipeline
+
+| Dimension | Traditional APMC Mandi (With Middlemen) | AgriProfit Direct Government Pipeline |
+|---|---|---|
+| **Intermediary Fee** | **2.5% to 8%** commission deducted from farmer | **0% Commission** (100% MSP payout directly to farmer) |
+| **Mandi Gate Access** | Controlled by commission agent cartels; days of queueing | **12-Digit Passcode** with guaranteed queue priority |
+| **Moisture Deductions** | Subjective, arbitrary deductions (₹200–500/q cut) | **Automated FCI <12% Formula** with transparent digital assaying |
+| **Identity Verification** | Manual paper slip; prone to proxy middlemen | **UIDAI Iris / Biometric Verification** preventing proxy entries |
+| **Weighing Accuracy** | Manual mechanical scales, frequent weight rigging | **Digital Weighbridge Integration** (Automated Gross − Tare) |
+| **Payment Settlement** | Routed via middleman bank account; 15–45 days delay | **Direct Benefit Transfer (DBT / PFMS)** within 24–48 hours |
+| **Proof of Sale** | Hand-written *kaccha parcha* easily lost or denied | **Digital National Procurement Receipt** with Tx ID & stamp |
+
+---
+
+## 3. Platform Architecture: The 4 Core Service Pillars
 
 The user experience is structured into four primary service pillars accessible from the main dashboard:
 
@@ -71,13 +154,18 @@ The user experience is structured into four primary service pillars accessible f
 
 ### Pillar 1: Farm Services (`/farm`)
 - **Interactive Land Mapping:** GPS pinpointing and polygon drawing on Google Maps with real-time geodesic area calculation in acres and hectares.
-- **3-Layer Soil Health Card (`/farm/soil`):** Complete analysis of primary macronutrients (N, P, K), secondary micronutrients (Zn, Fe, B, S), and physical soil health (pH, EC, Organic Carbon).
-- **Fertilizer Rebalancing Engine:** Automated calculation of exact Urea, DAP, and MOP requirements per acre based on ICAR STCR equations to reduce input waste.
-- **Live Agro-Meteorology (`/weather`):** 7-day temperature, rainfall, and spray window forecasts via Open-Meteo, cross-referenced with regional IMD baselines.
+- **3-Layer Depth Soil Health Profile (`/farm/soil`):**
+  - *Layer 1 (0–15 cm Topsoil):* Seed germination, primary root zone, active N-P-K nutrient uptake.
+  - *Layer 2 (15–30 cm Subsoil):* Moisture retention capacity, secondary nutrients (Sulphur, Zinc, Iron, Boron).
+  - *Layer 3 (30–60 cm Deep Zone):* Sub-surface compaction, hardpan resistance, perennial root health.
+- **Fertilizer Rebalancing Engine:** Automated calculation of exact Urea, DAP, MOP, SSP, and Zinc Sulphate requirements per acre based on ICAR STCR quadratic equations to eliminate chemical over-application.
+- **Live Agro-Meteorology (`/weather`):** 7-day temperature, rainfall, and agricultural spray window forecasts via Open-Meteo, cross-referenced with regional IMD baselines.
 
 ### Pillar 2: Crop Services (`/crop-services`)
-- **Progressive Planning Wizard (`/crop-services/planning`):** Tailors crop recommendations based on soil type, water source (canal, borewell, drip, rainfed), and risk appetite.
-- **4-Part Hedged Portfolio Optimizer:** Evaluates crops across 5 data dimensions and partitions acreage into 4 functional quadrants (Primary High Profit, Low-Risk Hedged, Fast Cash, Climate Resilient).
+- **Progressive 3-Step Planning Wizard (`/crop-services/planning`):**
+  - *Step 1: Select Farm Plot:* Choose registered PostGIS polygon or configure custom acreage/district coordinates.
+  - *Step 2: Configure Constraints:* Calibrate risk appetite (Conservative, Balanced, Growth), water availability (Canal/Borewell/Drip/Rainfed), and budget caps.
+  - *Step 3: Analysis Results:* Generates 4-crop portfolio, 7-scenario Monte Carlo simulations, and itemized break-even margins.
 - **Pairwise Crop Comparison (`/crop-services/compare`):** Side-by-side agronomic and financial trade-off matrix.
 - **ICAR Crop Library (`/crops`):** Curated database of 40+ crops with package-of-practices, sowing depths, and disease resistances.
 
@@ -91,11 +179,11 @@ The user experience is structured into four primary service pillars accessible f
 - **Cadastral Land Dossier (`/reports/farm`):** Official PDF-ready land record documenting GPS vertices, soil profile, and crop history.
 - **Soil Health Card Dossier (`/reports/soil`):** Printable nutrient scorecards with color-coded diagnostic ratings.
 - **Seasonal Action Roadmap (`/recommendations/plan`):** 120-day chronological operational checklist from tilling to post-harvest storage.
-- **Government Welfare Schemes (`/schemes`):** Direct eligibility scanner for PM-KISAN, PMFBY crop insurance, Kisan Credit Card (KCC), and Agriculture Infrastructure Fund (AIF).
+- **Government Welfare Schemes Scanner (`/schemes`):** Direct eligibility scanner for PM-KISAN (₹6,000/yr), PMFBY crop insurance, Kisan Credit Card (KCC 4% subvention), and Agriculture Infrastructure Fund (AIF 3% interest subvention).
 
 ---
 
-## 3. The 4-Part Hedged Land Allocation Engine
+## 4. The 4-Part Hedged Land Allocation Engine
 
 Instead of mono-cropping, AgriProfit applies **Modern Portfolio Theory (Markowitz Mean-Variance Adaptation)** to Indian agriculture ([`portfolio-optimizer.ts`](frontend/src/lib/portfolio-optimizer.ts)).
 
@@ -149,9 +237,9 @@ Every generated portfolio is automatically evaluated against 7 disruptions:
 
 ---
 
-## 4. The 5-Channel Unified Agri-Marketplace
+## 5. The 5-Channel Unified Agri-Marketplace
 
-AgriProfit's marketplace eliminates exploitative middlemen by offering five distinct channels tailored to different buyer and seller personas:
+AgriProfit's marketplace eliminates middlemen across all commercial relationships:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -164,9 +252,10 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 │   • Formal FCI/NAFED downloadable procurement receipts                                 │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ Channel 2: Direct Farm-Gate Wholesale Desk (/marketplace/direct)                       │
-│   • Direct catalog listings with live price-positioning vs MSP floor                   │
+│   • Direct catalog listings where farmers set independent asking prices                │
 │   • Bilateral counter-offer engine with buyer escrow protection                        │
-│   • Dynamic bulk request basket with farm-gate freight estimates                       │
+│   • Bulk Request Basket Drawer for multi-listing wholesale purchasing                  │
+│   • Real-Time Multilingual Chat with automatic Hindi/English translation               │
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ Channel 3: International Agri-Export Gateway (/marketplace/export)                     │
 │   • 10-country international demand signals (UAE, Saudi Arabia, EU, USA, ASEAN)       │
@@ -180,12 +269,42 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 ├────────────────────────────────────────────────────────────────────────────────────────┤
 │ Channel 5: CACP Statutory MSP Safety Net Guarantee (/market-services/msp)              │
 │   • Hardcoded price floor: platform warns and blocks predatory below-MSP bidding        │
-└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
+
+### Channel 1: Official FCI MSP Procurement Terminal (`/marketplace/government`)
+- **Direct Disintermediation:** Eliminates commission agents (*arhtiyas*) from the government procurement supply chain.
+- **Quota Verification:** PostGIS land polygon validation ensures registered harvest volume matches farm acreage.
+- **Priority Intake:** Single-use 12-digit authorization codes guarantee rapid entry without middleman yard extortion.
+- **Zero Identity Theft:** UIDAI Iris biometric scan confirms genuine farmer identity.
+- **Transparent Weighing:** Direct weighbridge gross/tare logging and FCI <12% moisture formula eliminate arbitrary cuts.
+- **100% DBT Settlement:** 0% broker fee; funds transferred directly to farmer's bank account via PFMS in 24–48 hrs.
+- **Digital Audit Trail:** Printable National Digital Procurement Receipt with transaction hashes and government seal.
+
+### Channel 2: Direct Farm-Gate Wholesale Desk (`/marketplace/direct`)
+- **Independent Pricing:** Farmers list their harvested commodities with custom asking rates, minimum order quantities (MOQ), and lot locations.
+- **Bilateral Counter-Offer Engine:** Buyers and farmers can negotiate prices dynamically with structured counter-proposals.
+- **Escrow Fund Protection:** When an offer is accepted, buyer funds are securely locked in platform escrow until the farmer dispatches the produce and the buyer confirms physical receipt.
+- **Bulk Request Basket Drawer (`RequestBasketDrawer.tsx`):** Institutional buyers can assemble multi-crop procurement orders across different farms into a single checkout cart.
+- **Multilingual Trade Negotiation Chat (`MarketplaceChatModal.tsx`):** Real-time messaging with instantaneous bidirectional translation across 11 Indian languages (e.g. Tamil buyer chatting seamlessly with Hindi farmer).
+
+### Channel 3: APEDA International Agri-Export Gateway (`/marketplace/export`)
+- **Global Demand Signals:** Real-time import requirements from 10 destination countries (UAE, Saudi Arabia, United States, United Kingdom, European Union, Japan, Singapore, Australia, Bangladesh, Vietnam).
+- **FOB vs Mandi Price Arbitrage:** Displays domestic APMC mandi prices side-by-side with international Free-On-Board (FOB) export rates (often 40%–120% higher).
+- **Itemized Export Cost Waterfall:** Transparent breakdown of APEDA registration fees, phytosanitary laboratory testing, cold-chain transport, port customs handling, and ocean freight.
+- **Cooperative Container Pooling:** Enables smallholders producing 20–50 quintals to pool their harvest with neighboring farmers to meet standard 20ft (18 MT) or 40ft (26 MT) refrigerated sea-container thresholds.
+
+### Channel 4: Cooperative & FPO Group Selling Desk (`/marketplace/groups`)
+- **Collective Bargaining:** Small and marginal farmers aggregate identical crop varieties into shared bulk listings.
+- **Freight Optimization:** Bulk truckloads reduce per-quintal transportation costs by 30% to 45% compared to individual farm shipments.
+- **Pro-Rata Revenue Distribution:** Automated smart distribution formula that calculates exact individual farmer payouts based on gross delivered weight and lab-tested moisture grades.
+
+### Channel 5: CACP Statutory MSP Safety Net Guarantee (`/market-services/msp`)
+- **Anti-Exploitation Price Floor:** Platform continuously compares private buyer offers against the statutory Commission for Agricultural Costs and Prices (CACP) Minimum Support Price.
+- **Predatory Bid Alert:** If a buyer bids below the official MSP floor, the system highlights the deficit in red, warns the farmer of under-pricing, and provides a 1-click shortcut to divert the stock directly to the FCI Government Procurement Terminal.
 
 ---
 
-## 5. Unnati AI (उन्नति AI) — Multimodal Assistant
+## 6. Unnati AI (उन्नति AI) — Multimodal Assistant
 
 **Unnati AI** is a persistent, interactive assistant mounted across every page of the application:
 
@@ -207,7 +326,7 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 ```
 
 - **Universal Intelligence:** Direct integration with Google Gemini 2.5 Flash (`gemini-2.5-flash`), answering questions across agronomy, market trading, government regulations, and science.
-- **Movable & Resizable UI:** Freely draggable header and 8-point resize handles (all four borders and corners) plus one-click maximize/minimize.
+- **Movable & Resizable UI:** Freely draggable header and 8-direction resize handles (all four borders and corners) plus one-click maximize/minimize.
 - **Multimodal Computer Vision Image Upload:**
   - **`📁 Add Photo` Button:** Opens native device/system file picker (`.png`, `.jpg`, `.jpeg`, `.webp`, `.heic`).
   - **Drag-and-Drop:** Drop leaf images directly onto the window with an animated drop overlay.
@@ -222,7 +341,7 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 
 ---
 
-## 6. Machine Learning Architecture & Models
+## 7. Machine Learning Architecture & Models
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -257,7 +376,7 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 
 ---
 
-## 7. Complete API Catalog
+## 8. Complete API Catalog
 
 ### Python FastAPI ML Microservice (Port `8000`)
 
@@ -276,12 +395,13 @@ AgriProfit's marketplace eliminates exploitative middlemen by offering five dist
 - **🌾 Recommendations (`/api/recommendations/`):** 4-part portfolio optimizer, seasonal Kharif/Rabi/Zaid planning, pairwise comparison, and profitability models.
 - **📈 Markets & MSP (`/api/markets/`, `/api/msp/`):** Daily APMC mandi arrivals, commodity trends, and CACP statutory MSP catalog.
 - **🛒 Marketplace (`/api/marketplace/`):** Direct listings, counter-offers, FPO groups, 12-digit MSP tokens, biometric verification, export matching, and digital escrow transactions.
+- **💬 Negotiation Chat (`/api/chat/`):** Conversations, messages, and real-time translation for bilateral buyer-seller negotiations.
 - **🌐 Localization & Weather (`/api/translation/`, `/api/weather/`):** Multilingual batch translation across 11 languages, Open-Meteo agro-weather forecasts.
 - **⚙️ Health (`/api/health/`, `/api/admin/metrics`):** Full system heartbeat and database pool latency monitoring.
 
 ---
 
-## 8. Dual-Laptop SIH Live Demonstration Mode
+## 9. Dual-Laptop SIH Live Demonstration Mode
 
 AgriProfit includes a dedicated dual-laptop demonstration architecture built for Smart India Hackathon jury presentations:
 
@@ -307,7 +427,7 @@ The login screen (`/login`) features a top-level quick-access bar with pre-confi
 
 ---
 
-## 9. Monorepo Project Structure
+## 10. Monorepo Project Structure
 
 ```text
 SIH-ROUND-2/
@@ -357,7 +477,7 @@ SIH-ROUND-2/
 
 ---
 
-## 10. Installation & Quick Start
+## 11. Installation & Quick Start
 
 ### Prerequisites
 - **Node.js:** `v20.x` or `v22.x`
@@ -411,7 +531,7 @@ npm run start -- -H 0.0.0.0 -p 3000
 
 ---
 
-## 11. Multi-Device & Network Configuration
+## 12. Multi-Device & Network Configuration
 
 To run the application across multiple laptops during hackathon demonstrations:
 1. Ensure both devices are connected to the same Wi-Fi or mobile hotspot.
@@ -429,7 +549,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 12. Vernacular & Accessibility Standards
+## 13. Vernacular & Accessibility Standards
 
 - **11 Language Locales:** Full UI translation dictionaries (English, Hindi, Punjabi, Gujarati, Marathi, Telugu, Bengali, Tamil, Kannada, Malayalam, Odia).
 - **Audio Screen Narrator (`PageAudioTranslator`):** Automatically synthesizes clean spoken summaries of the active page in the user's chosen language.
@@ -440,7 +560,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 13. Security & Data Integrity
+## 14. Security & Data Integrity
 
 - **Non-Secure LAN Compatibility:** Cookies are configured with `SameSite=Lax`, `secure: false`, and explicit `expires: 0` on logout, ensuring sessions work reliably across plain HTTP local networks as well as HTTPS deployments.
 - **Key Isolation:** Gemini and OpenRouter API keys are executed strictly server-side inside Next.js route handlers.
@@ -448,7 +568,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 14. License & Hackathon Attribution
+## 15. License & Hackathon Attribution
 
 Developed for **Smart India Hackathon (SIH 2026)**.  
 Repository: [granth-alpha2/SIH-ROUND-2](https://github.com/granth-alpha2/SIH-ROUND-2)  
