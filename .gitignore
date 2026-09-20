@@ -35,3 +35,8 @@ pnpm-debug.log*
 *.pem
 *.tsbuildinfo
 *.exe
+
+# Private patent & internal technical investigation (do not commit publicly)
+investigation.md
+*investigation*
+*patent*
