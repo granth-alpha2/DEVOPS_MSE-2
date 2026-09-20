@@ -669,8 +669,9 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 16. License & Hackathon Attribution
+## 16. Intellectual Property, Patents & License
 
-Developed for **Smart India Hackathon (SIH 2026)**.  
-Repository: [granth-alpha2/SIH-ROUND-2](https://github.com/granth-alpha2/SIH-ROUND-2)  
-Licensed under the [MIT License](LICENSE).
+- **Inventor & System Architect:** Granth Chauhan
+- **Patent Status:** **PATENT PENDING** — Core technical innovations (including the Government-to-Farmer Middleman Disintermediation Architecture, the 4-Part Risk-Stratified MPT Agricultural Portfolio Optimizer, the 10-Step Seasonal & Festival-Demand Engine, and 3-Layer Depth STCR Soil Rebalancing) are subject to active patent applications.
+- **Ownership & License:** **Proprietary & Confidential — All Rights Reserved.** Copyright © 2026 Granth Chauhan. See [`LICENSE`](LICENSE) for formal terms.
+- **SIH 2026 Evaluation:** Authorized jury members and evaluators of the Smart India Hackathon (SIH 2026) are granted a limited license solely for assessment and verification purposes. All commercial, redistribution, and reproduction rights are strictly reserved.

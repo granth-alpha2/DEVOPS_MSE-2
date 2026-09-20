@@ -43,7 +43,7 @@ The project was designed and implemented for the Smart India Hackathon (SIH 2026
 * **Institutional / Hackathon Considerations:**
   * SIH Participation Terms: Verification of hackathon IP clauses regarding student ownership vs organizer non-exclusive licenses.
   * College/Institution Involvement: Confirmation that university computing facilities or agreements do not impose automated assignment.
-  * Third-Party Libraries & Licenses: MIT License applied to public outer shell; proprietary mathematical formulations and internal optimizer weights retained under trade secret / patent investigation.
+  * Third-Party Libraries & Licenses: Standard permissive dependencies (React, FastAPI) used under their respective open-source licenses; AgriProfit source code, core algorithms, and architecture are strictly Proprietary & Patent Pending under Granth Chauhan.
   * External AI Contributions: System architecture, mathematical formulation, constraint formulations, and integration were human-designed; standard boilerplate code assisted by AI tools. Under patent law, the human conceptualizer of the technical solution qualifies as the sole inventor.
 
 ---
