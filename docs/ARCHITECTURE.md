@@ -71,6 +71,16 @@ AgriProfit includes a dedicated, production-grade direct procurement subsystem e
 
 ---
 
+## 1.2 🗓️ Seasonal, Interim (Zaid) & Festival-Timed Crop Intelligence Engine
+
+AgriProfit addresses the multi-season nature of Indian agriculture (Kharif, Rabi, Zaid) and the 60–90 day summer fallow window:
+1. **5 Planning Modes:** `short_duration` (25–75 day fast crops), `festival_season` (targeted festive market arrivals), `interim_crop` (catch crops between Rabi harvest and Kharif sowing), `quick_income` (emergency liquidity), and `custom_deadline` (strict days-remaining filter).
+2. **Indian Festival Demand Signals:** Models 8 national festival demand surges (Diwali, Chhath Puja, Makar Sankranti, Holi, Baisakhi, Eid, Navratri, Janmashtami) with 1.20x–1.45x price multipliers.
+3. **10-Step Evaluator:** Evaluates agro-climatic zone, sowing calendar, crop duration fit, Open-Meteo weather risks, soil health, water budget, MSP safety net, festive surge, financial ROI, and 0–100 explainable score.
+4. **PostGIS Field Allocation:** Farmers can dynamically allocate sub-plots to seasonal catch crops via `SeasonalCropPlanningPanel.tsx`.
+
+---
+
 ## 2. Component Topology
 
 ### A. Frontend Layer (`frontend/`)

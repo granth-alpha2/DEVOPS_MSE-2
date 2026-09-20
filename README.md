@@ -73,6 +73,7 @@
 - **Multilingual Trade Negotiation Chat:** Built-in real-time chat with automatic translation between 11 Indian languages, allowing farmers and institutional buyers to negotiate directly without linguistic brokers.
 - **Unnati AI (उन्नति AI) Assistant:** Draggable, 8-direction resizable floating popup assistant powered by Google Gemini 2.5 Flash (`gemini-2.5-flash`), with system file photo picker (`📁 Add Photo`), drag-and-drop, clipboard paste, vernacular voice recognition, Hindi/English speech synthesis, and leaf disease diagnosis.
 - **4-Part Hedged Portfolio Optimizer:** Modern Portfolio Theory (MPT / Markowitz) applied to agriculture, dynamically splitting land between Primary High-Profit, Low-Risk Hedged (MSP), Fast Cash, and Climate-Resilient Legume crops.
+- **🗓️ Seasonal & Interim (Zaid) Crop Intelligence Engine:** Dynamic multi-season modeling across Kharif, Rabi, and Zaid fallow windows with 5 specialized modes, 8 festival demand multipliers (+25% to +45% price surge capture), and a 10-step agro-economic evaluator for 30–75 day catch crops.
 - **3-Layer Depth Soil Health & STCR Fertilizer Engine:** Comprehensive analysis across Layer 1 (0–15cm), Layer 2 (15–30cm), and Layer 3 (30–60cm) with ICAR STCR quadratic equations for exact Urea, DAP, MOP, SSP, and Zinc dosages.
 - **Dual-Laptop Live Demonstration System:** Seamless multi-workstation flow (Laptop 1: Farmer produces & registers harvest; Laptop 2: FCI Officer scans biometric & disburses funds).
 - **1-Click Instant Persona Logins:** Pre-configured profiles for Farmers (Ramesh Kumar), FCI Mandi Officers (Officer S. Sharma), APEDA Exporters, and Agribusiness Buyers with zero SMS or password friction.
@@ -210,6 +211,7 @@ The user experience is structured into four primary service pillars accessible f
   - *Step 2: Configure Constraints:* Calibrate risk appetite (Conservative, Balanced, Growth), water availability (Canal/Borewell/Drip/Rainfed), and budget caps.
   - *Step 3: Analysis Results:* Generates 4-crop portfolio, 7-scenario Monte Carlo simulations, and itemized break-even margins.
 - **Pairwise Crop Comparison (`/crop-services/compare`):** Side-by-side agronomic and financial trade-off matrix.
+- **🗓️ Seasonal Crop Planning Engine (`/crop-services/seasonal`):** Squeezes high-margin catch crops into fallow gaps and festive demand spikes with 5 customizable modes (`short_duration`, `festival_season`, `interim_crop`, `quick_income`, `custom_deadline`).
 - **ICAR Crop Library (`/crops`):** Curated database of 40+ crops with package-of-practices, sowing depths, and disease resistances.
 
 ### Pillar 3: Market Services & 5-Channel Marketplace (`/market-services`, `/marketplace`)
@@ -280,7 +282,61 @@ Every generated portfolio is automatically evaluated against 7 disruptions:
 
 ---
 
-## 5. The 5-Channel Unified Agri-Marketplace
+## 5. 🗓️ Seasonal, Interim (Zaid) & Festival-Timed Crop Intelligence Engine
+
+Traditional agricultural apps fail because they treat crop planning as a static, single-crop recommendation (*"Crop A is best"*). This ignores India's tri-seasonal cropping calendar (**Kharif, Rabi, Zaid**) and leaves the **60–90 day interim fallow window (Zaid: March to June)** completely uncultivated. Furthermore, it ignores massive price spikes driven by **Indian religious and harvest festivals**, where mandis experience temporary demand surges of 25% to 45%.
+
+AgriProfit introduces a dedicated **Seasonal & Short-Duration Crop Intelligence Engine** ([`seasonal-crop-engine.ts`](frontend/src/lib/seasonal-crop-engine.ts) & [`SeasonalCropPlanningPanel.tsx`](frontend/src/features/recommendations/SeasonalCropPlanningPanel.tsx)) that empowers farmers to squeeze high-margin catch crops into fallow gaps and align harvest timings with peak market demand:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        AGRIPROFIT 10-STEP SEASONAL CROP EVALUATOR ENGINE                               │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                        │
+│   [1. Agro-Climatic Zone]  ──► Matches latitude/district to ICAR regional agro-ecological zone        │
+│   [2. Sowing Calendar]     ──► Validates active season: Kharif (Monsoon), Rabi (Winter), Zaid (Summer) │
+│   [3. Duration Fit]        ──► Enforces strict constraint: Crop Min Duration <= Farmer Available Days  │
+│   [4. Live Agro-Weather]   ──► Filters terminal heat risk, frost window, and excessive precipitation   │
+│   [5. Soil Health Match]   ──► Checks Layer 1-3 pH, texture, and organic carbon compatibility          │
+│   [6. Water Budget]        ──► Validates canal, borewell, drip, or rainfed irrigation requirements     │
+│   [7. CACP MSP Floor]      ──► Fetches statutory safety-net floor prices for candidate pulses/oilseeds │
+│   [8. Festival Multiplier] ──► Applies 1.20x–1.45x festive demand surge multiplier                     │
+│   [9. Financial ROI]       ──► Computes itemized input costs, gross revenue, net margin, and break-even│
+│  [10. Explainable Score]   ──► Ranks options from 0–100 with visual chronological harvest timelines     │
+│                                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### The 5 Seasonal Planning Modes
+
+Farmers can toggle between five distinct strategic modes in the seasonal dashboard:
+1. **Short-Duration Catch Crops (`short_duration`):** Identifies fast-cycling crops (25–75 days) like Moong, Urad, Radish, Spinach, and Cucurbits that generate rapid liquidity without locking up acreage for months.
+2. **Festival-Timed Market Sowing (`festival_season`):** Back-calculates the exact sowing date so that the crop reaches peak maturity during high-consumption festive windows (e.g. Diwali, Chhath Puja, Pongal), capturing substantial price premiums.
+3. **Interim Window Optimization (`interim_crop`):** Squeezes a catch crop into the gap between two major seasonal crops (e.g. Wheat harvest in April $\to$ 60-day Summer Moong $\to$ Basmati Rice transplanting in July), capturing an extra ₹25,000–₹45,000 net profit per acre while fixing atmospheric nitrogen for the upcoming paddy crop.
+4. **Quick Income Working Capital (`quick_income`):** Designed for emergency liquidity needs (school fees, debt servicing, equipment rental) by selecting crops with the highest cash velocity and daily mandi turnover within a 30–60 day window.
+5. **Custom Sowing Deadline (`custom_deadline`):** The farmer specifies an exact number of available days (e.g. 50 days until land tilling), and the engine filters out any crop whose maturity cycle exceeds the deadline.
+
+### Indian Festival Demand Multiplier Catalog
+
+AgriProfit's engine models the nationwide demand surges associated with major cultural and harvest events:
+
+| Festival / Celebration | Hindi / Vernacular | Window / Month | High-Demand Commodities | Demand Surge Multiplier |
+|---|---|---|---|:---:|
+| **Diwali / Deepawali** | दीपावली / दिवाली | Late Oct – Early Nov | Radish, Palak, Coriander, Fenugreek, Moong, Potato, Onion | **1.35x (+35%)** |
+| **Chhath Puja** | छठ पूजा | Early November | Radish (Mooli), Sugarcane, Green Gram, Black Gram, Banana | **1.45x (+45%)** |
+| **Makar Sankranti / Pongal / Lohri** | मकर संक्रांति / पोंगल | Mid-January | Palak, Mooli, Methi, Chickpea (Chana), Urad, Sugarcane | **1.30x (+30%)** |
+| **Holi Festival of Colors** | होली | Mid-March | Green Gram (Moong), Cucumber, Okra (Bhindi), Coriander | **1.25x (+25%)** |
+| **Baisakhi / Ugadi / Vishu** | बैसाखी / उगादी | Mid-April | Early Summer Vegetables, Watermelon, Muskmelon, Moong | **1.20x (+20%)** |
+| **Eid-ul-Fitr / Ramadan** | ईद-उल-फ़ित्र | Variable (Lunar) | Coriander, Mint, Onion, Garlic, Watermelon, Banana | **1.35x (+35%)** |
+| **Navratri & Dussehra** | नवरात्रि / दशहरा | Late Sept – October | Potato, Buckwheat (Kuttu), Banana, Green Vegetables | **1.30x (+30%)** |
+| **Janmashtami / Raksha Bandhan** | जन्माष्टमी / रक्षाबंधन | August | Cucumber (Kheera), Leafy Greens, Pulses | **1.25x (+25%)** |
+
+### Dynamic PostGIS Field Plot Allocation
+Through the interactive UI (`SeasonalCropPlanningPanel.tsx`), the farmer can allocate a sub-plot (e.g. 0.5 to 1.0 acre) of their verified PostGIS land boundary to the seasonal crop using an interactive slider, while keeping the rest of the farm committed to the 4-part hedged portfolio. Clicking **"Allocate Crop to Map"** binds the seasonal crop directly to their spatial cadastral record.
+
+---
+
+## 6. The 5-Channel Unified Agri-Marketplace
 
 AgriProfit's marketplace eliminates middlemen across all commercial relationships:
 
@@ -347,7 +403,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 
 ---
 
-## 6. Unnati AI (उन्नति AI) — Multimodal Assistant
+## 7. Unnati AI (उन्नति AI) — Multimodal Assistant
 
 **Unnati AI** is a persistent, interactive assistant mounted across every page of the application:
 
@@ -364,7 +420,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 │ 📸 Leaf Disease Vision Scan: Puccinia striiformis (Wheat Yellow Rust)    │
 │    Confidence: 94.8% · Treatment: Propiconazole 25% EC @ 1ml/L          │
 │                                                                         │
-│ [� Add Photo] [🧪 Samples] [🎤 Speak Hindi/English] [💬 Send]          │
+│ [📁 Add Photo] [🧪 Samples] [🎤 Speak Hindi/English] [💬 Send]          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -384,7 +440,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 
 ---
 
-## 7. Machine Learning Architecture & Models
+## 8. Machine Learning Architecture & Models
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────┐
@@ -419,7 +475,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 
 ---
 
-## 8. Complete API Catalog
+## 9. Complete API Catalog
 
 ### Python FastAPI ML Microservice (Port `8000`)
 
@@ -444,7 +500,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 
 ---
 
-## 9. Dual-Laptop SIH Live Demonstration Mode
+## 10. Dual-Laptop SIH Live Demonstration Mode
 
 AgriProfit includes a dedicated dual-laptop demonstration architecture built for Smart India Hackathon jury presentations:
 
@@ -470,7 +526,7 @@ The login screen (`/login`) features a top-level quick-access bar with pre-confi
 
 ---
 
-## 10. Monorepo Project Structure
+## 11. Monorepo Project Structure
 
 ```text
 SIH-ROUND-2/
@@ -480,7 +536,9 @@ SIH-ROUND-2/
 │   │   │   ├── page.tsx              # Unified Government Service Pillars Homepage
 │   │   │   ├── login/                # 1-Click Persona Login, Active Session Bar & OTP Auth
 │   │   │   ├── farm/                 # Farm Services & 3-Layer Soil Health
-│   │   │   ├── crop-services/        # Planning Wizard & 4-Part Portfolio Optimizer
+│   │   │   ├── crop-services/        # Planning Wizard, Seasonal Engine & 4-Part Portfolio
+│   │   │   │   ├── seasonal/         # 5-Mode Seasonal & Interim Catch Crop Planning
+│   │   │   │   └── planning/         # 3-Step MPT Land Portfolio Wizard
 │   │   │   ├── market-services/      # APMC Mandi, MSP Catalog & NCDEX Curves
 │   │   │   ├── marketplace/          # 5-Channel Unified Digital Marketplace
 │   │   │   │   ├── direct/           # Channel 2: Direct Farm-Gate Wholesale Desk
@@ -520,7 +578,7 @@ SIH-ROUND-2/
 
 ---
 
-## 11. Installation & Quick Start
+## 12. Installation & Quick Start
 
 ### Prerequisites
 - **Node.js:** `v20.x` or `v22.x`
@@ -574,7 +632,7 @@ npm run start -- -H 0.0.0.0 -p 3000
 
 ---
 
-## 12. Multi-Device & Network Configuration
+## 13. Multi-Device & Network Configuration
 
 To run the application across multiple laptops during hackathon demonstrations:
 1. Ensure both devices are connected to the same Wi-Fi or mobile hotspot.
@@ -592,7 +650,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 13. Vernacular & Accessibility Standards
+## 14. Vernacular & Accessibility Standards
 
 - **11 Language Locales:** Full UI translation dictionaries (English, Hindi, Punjabi, Gujarati, Marathi, Telugu, Bengali, Tamil, Kannada, Malayalam, Odia).
 - **Audio Screen Narrator (`PageAudioTranslator`):** Automatically synthesizes clean spoken summaries of the active page in the user's chosen language.
@@ -603,7 +661,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 14. Security & Data Integrity
+## 15. Security & Data Integrity
 
 - **Non-Secure LAN Compatibility:** Cookies are configured with `SameSite=Lax`, `secure: false`, and explicit `expires: 0` on logout, ensuring sessions work reliably across plain HTTP local networks as well as HTTPS deployments.
 - **Key Isolation:** Gemini and OpenRouter API keys are executed strictly server-side inside Next.js route handlers.
@@ -611,7 +669,7 @@ To run the application across multiple laptops during hackathon demonstrations:
 
 ---
 
-## 15. License & Hackathon Attribution
+## 16. License & Hackathon Attribution
 
 Developed for **Smart India Hackathon (SIH 2026)**.  
 Repository: [granth-alpha2/SIH-ROUND-2](https://github.com/granth-alpha2/SIH-ROUND-2)  

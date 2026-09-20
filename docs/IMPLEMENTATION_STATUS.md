@@ -29,6 +29,7 @@ This document records the required implementation order for the profitability an
 | 23 | End-to-end verification | Complete with environment caveats | Contract suites pass; PostgreSQL-dependent admin counters require configured DB |
 | 24 | 100% Middleman (*Arhtiya*) Removal System | Complete | Farmer application (`MspRequestModal`), Govt Mandi review (`GovernmentProcurementTerminal`), 12-digit passcode generation, Iris biometric scan, weighbridge gross/tare logging, 100% PFMS direct DBT payment, downloadable receipts |
 | 25 | 5-Channel Unified Marketplace & 11-Lang Chat | Complete | FCI MSP Gate, Direct Farm-Gate Desk with Escrow, APEDA Export Desk with Container Pooling, FPO Groups, CACP Floor Guarantee, Real-time Multilingual Chat (`MarketplaceChatModal`) |
+| 26 | Seasonal & Interim (Zaid) Crop Intelligence Engine | Complete | 5 planning modes, 8 festival multipliers (+25% to +45%), 10-step evaluator, fallow window optimization, PostGIS sub-plot map allocation (`SeasonalCropPlanningPanel.tsx`, `seasonal-crop-engine.ts`) |
 
 ## Verification commands
 
