@@ -1,7 +1,50 @@
 # AgriProfit — AI-Powered Smart Agriculture & 5-Channel Marketplace Platform
 
 > **Smart India Hackathon (SIH 2026) · Round 2 Production Implementation**  
-> A unified, production-grade agricultural decision-support and commodity monetization platform. AgriProfit empowers Indian farmers to plan, optimize, and directly trade their harvest by combining **spatial PostGIS field mapping**, **live Open-Meteo agro-meteorology**, **APMC mandi market rates**, **CACP Minimum Support Price (MSP) benchmarks**, **Python FastAPI ML yield, price, and fertilizer engines**, **a 5-channel transparent marketplace**, and **Unnati AI (उन्नति AI)** — an omnipresent multimodal, multilingual agronomist assistant powered by Google Gemini 2.5 Flash.
+> A unified, production-grade agricultural decision-support and commodity monetization platform. AgriProfit empowers Indian farmers to plan, optimize, and directly trade their harvest by combining **100% Middleman (*Arhtiya*) Removal between Government & Farmer**, **spatial PostGIS field mapping**, **live Open-Meteo agro-meteorology**, **APMC mandi market rates**, **CACP Minimum Support Price (MSP) benchmarks**, **Python FastAPI ML yield, price, and fertilizer engines**, **a 5-channel transparent marketplace**, and **Unnati AI (उन्नति AI)** — an omnipresent multimodal, multilingual agronomist assistant powered by Google Gemini 2.5 Flash.
+
+---
+
+## 🚨 KEY HIGHLIGHT: 100% Middleman (*Arhtiya*) Removal System Between Government & Farmer
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│               HOW AGRIPROFIT COMPLETELY REMOVES MIDDLEMEN (ARHTIYAS) FROM GOVT PROCUREMENT             │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                        │
+│   Step 1 ──► FARMER SENDS APPLICATION                                                                 │
+│              Farmer applies from home/mobile (/marketplace/msp): crop, quantity, moisture %, center    │
+│              • Bounded to verified PostGIS farm land polygon (eliminates ghost quota hoarding)         │
+│                                                                                                        │
+│   Step 2 ──► GOVT OFFICIAL REVIEWS & APPROVES                                                          │
+│              FCI / Mandi Officer reviews cadastral land records on procurement terminal                │
+│              • Officer validates crop yield quota and approves delivery slot                           │
+│                                                                                                        │
+│   Step 3 ──► 12-DIGIT PRIORITY GATE PASSCODE GENERATED                                                 │
+│              System generates single-use 12-digit numeric authorization passcode (e.g. 9481 0274 5519) │
+│              • Delivered instantly to farmer's mobile app (no handwritten broker paper slips)          │
+│                                                                                                        │
+│   Step 4 ──► MANDI GATE FAST-TRACK ENTRY (BYPASSING BROKER YARDS)                                      │
+│              Farmer arrives with tractor, enters code at gate terminal (/marketplace/government)       │
+│              • Bypasses middleman parking cartels with guaranteed priority intake                      │
+│                                                                                                        │
+│   Step 5 ──► UIDAI IRIS / BIOMETRIC AUTHENTICATION                                                     │
+│              On-site eye/iris scan verifies genuine farmer identity via UIDAI biometric adapter        │
+│              • Stops proxy traders and arhtiya syndicates from stealing farmer subsidies               │
+│                                                                                                        │
+│   Step 6 ──► AUTOMATED WEIGHBRIDGE & FCI MOISTURE FORMULA                                              │
+│              Gross and tare truck weight captured digitally (Zero mechanical scale skimming)          │
+│              • Statutory FCI <12% moisture formula applied transparently (Zero arbitrary deductions)   │
+│                                                                                                        │
+│   Step 7 ──► 100% DIRECT BENEFIT TRANSFER (DBT / PFMS)                                                 │
+│              100% MSP payout sanctioned directly into farmer's bank account in 24–48 hours             │
+│              • 0% COMMISSION CUT — Zero broker fees, zero middleman cuts                               │
+│                                                                                                        │
+│   Step 8 ──► NATIONAL DIGITAL PROCUREMENT RECEIPT                                                      │
+│              Printable Government receipt with unique Treasury Payment ID, QR & digital verification   │
+│                                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -25,8 +68,8 @@
 └──────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-- **100% Middleman (*Arhtiya*) Disintermediation:** Direct Government-to-Farmer procurement eliminates 2.5%–8% commission cuts through 12-digit gate passcodes, UIDAI Iris biometric verification, digital weighbridge gross/tare logging, and 100% Direct Benefit Transfer (DBT / PFMS) settlement within 24–48 hours.
-- **5-Channel Transparent Marketplace:** Direct trade, official FCI MSP intake, APEDA international export gateway with 10-country FOB benchmarks, FPO cooperative bulk aggregation, and CACP MSP statutory floor protection.
+- **100% Middleman (*Arhtiya*) Removal Between Government & Farmer:** Direct Government-to-Farmer procurement eliminates 2.5%–8% commission cuts through 12-digit gate passcodes, UIDAI Iris biometric verification, digital weighbridge gross/tare logging, and 100% Direct Benefit Transfer (DBT / PFMS) settlement within 24–48 hours.
+- **5-Channel Transparent Marketplace:** Official FCI MSP direct intake, direct farm-gate trade with counter-offers and escrow, APEDA international export gateway with 10-country FOB benchmarks, FPO cooperative bulk aggregation, and CACP MSP statutory floor protection.
 - **Multilingual Trade Negotiation Chat:** Built-in real-time chat with automatic translation between 11 Indian languages, allowing farmers and institutional buyers to negotiate directly without linguistic brokers.
 - **Unnati AI (उन्नति AI) Assistant:** Draggable, 8-direction resizable floating popup assistant powered by Google Gemini 2.5 Flash (`gemini-2.5-flash`), with system file photo picker (`📁 Add Photo`), drag-and-drop, clipboard paste, vernacular voice recognition, Hindi/English speech synthesis, and leaf disease diagnosis.
 - **4-Part Hedged Portfolio Optimizer:** Modern Portfolio Theory (MPT / Markowitz) applied to agriculture, dynamically splitting land between Primary High-Profit, Low-Risk Hedged (MSP), Fast Cash, and Climate-Resilient Legume crops.
@@ -321,7 +364,7 @@ AgriProfit's marketplace eliminates middlemen across all commercial relationship
 │ 📸 Leaf Disease Vision Scan: Puccinia striiformis (Wheat Yellow Rust)    │
 │    Confidence: 94.8% · Treatment: Propiconazole 25% EC @ 1ml/L          │
 │                                                                         │
-│ [📁 Add Photo] [🧪 Samples] [🎤 Speak Hindi/English] [💬 Send]          │
+│ [� Add Photo] [🧪 Samples] [🎤 Speak Hindi/English] [💬 Send]          │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 

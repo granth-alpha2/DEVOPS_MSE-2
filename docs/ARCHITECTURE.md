@@ -45,7 +45,29 @@ AgriProfit is an AI-powered agricultural decision-support platform designed for 
                                     ▼
                       MULTIMODAL AI AGRONOMIST
                   (Context-Aware Chat + Vision Leaf Diagnosis)
+                                    │
+                                    ▼
+         100% MIDDLEMAN (ARHTIYA) REMOVAL & 5-CHANNEL MARKETPLACE
+         ├── Channel 1: Govt FCI MSP Mandi Terminal (12-Digit Passcode, Iris Scan, Direct DBT)
+         ├── Channel 2: Direct Farm-Gate Wholesale Desk (Counter-Offers, Escrow, 11-Lang Chat)
+         ├── Channel 3: APEDA International Export Gateway (FOB Arbitrage, Container Pooling)
+         ├── Channel 4: Cooperative FPO Group Aggregation (30-45% Transport Savings)
+         └── Channel 5: CACP Statutory MSP Price Floor Guarantee (Anti-Predatory Bidding)
 ```
+
+---
+
+## 1.1 🏛️ Government-to-Farmer Middleman Removal Architecture
+
+AgriProfit includes a dedicated, production-grade direct procurement subsystem eliminating commission agents (*arhtiyas*):
+1. **Farmer Sends Application (`/marketplace/msp`):** Farmer reserves delivery slot directly from mobile, bound to their registered PostGIS land polygon.
+2. **Govt Official Reviews & Approves (`/marketplace/government`):** Official Mandi Procurement Terminal validates crop yield quota against land records.
+3. **12-Digit Passcode Generated:** System issues a single-use, unforgeable numeric authorization code (e.g. `9481 0274 5519`).
+4. **Fast-Track Mandi Gate Access:** Farmer arrives at Mandi gate with tractor and enters code, bypassing middleman holding yards and cartel queues.
+5. **UIDAI Iris Biometric Authentication:** On-site biometric eye scan confirms genuine farmer identity, preventing proxy sellers and ghost quota claims.
+6. **Automated Weighbridge & Moisture Assay:** Gross and tare weights captured digitally; transparent FCI $<12\%$ moisture formula applied with zero subjective broker cuts.
+7. **100% Direct Benefit Transfer (DBT / PFMS):** 100% MSP payout sanctioned directly to farmer's bank account in 24–48 hours (0% broker commission).
+8. **National Digital Procurement Receipt:** Immutable downloadable receipt with Treasury Tx ID, QR code, and official government stamp.
 
 ---
 
