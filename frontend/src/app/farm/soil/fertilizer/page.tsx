@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import AppShell from "../../../components/AppShell";
 import {
+  createDelhiNcrThreeLayerReport,
   createDemoThreeLayerReport,
 } from "@/lib/soil-service";
 import {
@@ -16,13 +17,13 @@ import type { FarmRecord } from "@/app/api/farms/repository";
 
 function FertilizerCalculatorContent() {
   const searchParams = useSearchParams();
-  const initialFarmId = searchParams.get("farmId") || "default-farm";
+  const initialFarmId = searchParams.get("farmId") || "delhi-ncr-farm";
   const initialCrop = searchParams.get("crop") || "Wheat";
 
   const [farms, setFarms] = useState<FarmRecord[]>([]);
   const [selectedFarmId, setSelectedFarmId] = useState<string>(initialFarmId);
   const [selectedCrop, setSelectedCrop] = useState<string>(initialCrop);
-  const [acres, setAcres] = useState<number>(2.5);
+  const [acres, setAcres] = useState<number>(initialFarmId.includes("delhi") ? 3.5 : 2.5);
 
   useEffect(() => {
     async function loadFarms() {
@@ -46,6 +47,9 @@ function FertilizerCalculatorContent() {
 
   // Load soil report
   const soilReport = useMemo(() => {
+    if (selectedFarmId.toLowerCase().includes("delhi") || selectedFarmId === "delhi-ncr-farm") {
+      return createDelhiNcrThreeLayerReport(selectedFarmId);
+    }
     return createDemoThreeLayerReport(selectedFarmId);
   }, [selectedFarmId]);
 
@@ -100,17 +104,26 @@ function FertilizerCalculatorContent() {
               onChange={(e) => {
                 const val = e.target.value;
                 setSelectedFarmId(val);
-                const found = farms.find((f) => f.id === val);
-                if (found) setAcres(found.areaAcres || 2.5);
+                if (val === "delhi-ncr-farm") {
+                  setAcres(3.5);
+                } else if (val === "default-farm") {
+                  setAcres(2.5);
+                } else {
+                  const found = farms.find((f) => f.id === val);
+                  if (found) setAcres(found.areaAcres || 2.5);
+                }
               }}
               className="w-full px-3 py-2 bg-slate-50 border border-slate-300 rounded-xl font-bold"
             >
+              <option value="delhi-ncr-farm">
+                🏛️ Delhi NCR — Ujwa / Najafgarh Basin (3.50 ac, Sandy Loam)
+              </option>
               {farms.map((f) => (
                 <option key={f.id} value={f.id}>
                   {f.name} ({f.areaAcres.toFixed(1)} ac)
                 </option>
               ))}
-              <option value="default-farm">Bathinda Plot 01 (2.5 Acres)</option>
+              <option value="default-farm">🌾 Punjab — Bathinda Plot 01 (2.50 ac, Loam)</option>
             </select>
           </div>
 

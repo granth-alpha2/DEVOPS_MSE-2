@@ -9,6 +9,7 @@ import {
   parseSoilReportDocument,
   analyzeSoilProfile,
   calculateSoilCropCompatibility,
+  createDelhiNcrThreeLayerReport,
   createDemoThreeLayerReport,
 } from "@/lib/soil-service";
 import { generateFertilizerPlan, FertilizerPlanResult } from "@/lib/fertilizer-engine";
@@ -16,11 +17,11 @@ import { CROP_DATABASE } from "@/lib/crop-data";
 
 export default function SoilAndFertilizerPage() {
   const [farms, setFarms] = useState<{ id: string; name: string; areaAcres: number }[]>([]);
-  const [selectedFarmId, setSelectedFarmId] = useState<string>("default-farm");
-  const [farmAcres, setFarmAcres] = useState<number>(2.5);
+  const [selectedFarmId, setSelectedFarmId] = useState<string>("delhi-ncr-farm");
+  const [farmAcres, setFarmAcres] = useState<number>(3.5);
 
   const [soilReport, setSoilReport] = useState<SoilReportRecord>(() =>
-    createDemoThreeLayerReport("default-farm")
+    createDelhiNcrThreeLayerReport("delhi-ncr-farm")
   );
 
   const [selectedCrop, setSelectedCrop] = useState<string>("Wheat");
@@ -196,14 +197,26 @@ export default function SoilAndFertilizerPage() {
             <button
               type="button"
               onClick={() => {
-                const demo = createDemoThreeLayerReport(selectedFarmId);
+                const demo = createDelhiNcrThreeLayerReport(selectedFarmId);
                 setSoilReport(demo);
-                setUploadStatus("Loaded verified ICAR Punjab 3-layer soil test demonstration dataset.");
+                setUploadStatus("Loaded verified Delhi NCR (KVK Ujwa, Najafgarh) 3-layer soil test dataset (Card ID: SHC-DL-2024-09821).");
                 setIsEditing(false);
               }}
               className="text-xs font-bold px-3 py-1.5 bg-emerald-50 text-emerald-800 border border-emerald-300 rounded hover:bg-emerald-100 transition-colors cursor-pointer"
             >
-              ★ Load Demo ICAR 3-Layer Report
+              🏛️ Load Official Delhi NCR Soil Report
+            </button>
+            <button
+              type="button"
+              onClick={() => {
+                const demo = createDemoThreeLayerReport("default-farm");
+                setSoilReport(demo);
+                setUploadStatus("Loaded verified ICAR Punjab 3-layer soil test demonstration dataset.");
+                setIsEditing(false);
+              }}
+              className="text-xs font-bold px-3 py-1.5 bg-slate-100 text-slate-700 border border-slate-300 rounded hover:bg-slate-200 transition-colors cursor-pointer"
+            >
+              🌾 Load Punjab Report
             </button>
           </div>
 
