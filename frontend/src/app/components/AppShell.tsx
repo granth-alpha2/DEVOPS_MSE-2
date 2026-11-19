@@ -19,6 +19,7 @@ const TOP_NAV_ITEMS = [
   { label: "Reports & Records", href: "/reports", key: "nav.reports" },
   { label: "Schemes", href: "/schemes", key: "nav.schemes" },
   { label: "Knowledge Base", href: "/knowledge", key: "nav.knowledge" },
+  { label: "Backend Mode", href: "/backend", key: "nav.backendMode" },
 ];
 
 const LANGUAGES = [

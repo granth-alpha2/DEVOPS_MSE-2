@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import AppShell from "./components/AppShell";
 import type { FarmRecord } from "./api/farms/repository";
 import { useTranslation } from "@/lib/i18n/TranslationContext";
@@ -11,9 +12,31 @@ import PageAudioTranslator from "./components/PageAudioTranslator";
 
 export default function Home() {
   const { t } = useTranslation();
+  const router = useRouter();
   const [farms, setFarms] = useState<FarmRecord[]>([]);
   const [loading, setLoading] = useState(true);
   const [showSourceModal, setShowSourceModal] = useState(false);
+  const [mode, setMode] = useState<"selection" | "frontend">(() => {
+    try {
+      return sessionStorage.getItem("agriprofit_showcase_mode") === "frontend" ? "frontend" : "selection";
+    } catch {
+      return "selection";
+    }
+  });
+
+  function chooseFrontend() {
+    try {
+      sessionStorage.setItem("agriprofit_showcase_mode", "frontend");
+    } catch {}
+    setMode("frontend");
+  }
+
+  function chooseBackend() {
+    try {
+      sessionStorage.setItem("agriprofit_showcase_mode", "backend");
+    } catch {}
+    router.push("/backend");
+  }
 
   // Register clean readable audio summary for screen readers & TTS
   usePageAudioContent({
@@ -125,6 +148,77 @@ export default function Home() {
       ],
     },
   ];
+
+  if (mode === "selection") {
+    return (
+      <main className="mode-selection-page min-h-screen px-5 py-8 sm:px-8 sm:py-12">
+        <div className="mx-auto max-w-6xl">
+          <header className="mb-8 flex items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-700 text-2xl shadow-lg">
+                🌾
+              </div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.22em] text-emerald-700">AgriProfit</p>
+                <p className="text-sm font-bold text-slate-600">Examination Showcase</p>
+              </div>
+            </div>
+            <span className="hidden rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-black text-emerald-800 sm:inline">
+              Two-mode experience
+            </span>
+          </header>
+
+          <section className="mb-8 text-center sm:mb-10">
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.28em] text-emerald-700">Choose an experience</p>
+            <h1 className="mx-auto max-w-3xl text-3xl font-black tracking-tight text-slate-900 sm:text-5xl">
+              Explore AgriProfit as a user or inspect how it is built
+            </h1>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+              Start with the working agricultural portal, or open the technical control center showing the real backend and DevOps configuration.
+            </p>
+          </section>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <button
+              type="button"
+              onClick={chooseFrontend}
+              className="mode-card group text-left"
+            >
+              <div className="mode-card-icon bg-emerald-50 text-emerald-800">🌱</div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-emerald-700">User experience</p>
+                <h2 className="mt-2 text-2xl font-black text-slate-900">Frontend Mode</h2>
+                <p className="mt-3 leading-7 text-slate-600">
+                  Use the complete farm, crop, market, soil, reporting, and marketplace application.
+                </p>
+              </div>
+              <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 text-sm font-black text-emerald-800">
+                <span>Open the application</span><span className="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </button>
+
+            <button
+              type="button"
+              onClick={chooseBackend}
+              className="mode-card mode-card-backend group text-left"
+            >
+              <div className="mode-card-icon bg-sky-50 text-sky-800">⚙️</div>
+              <div>
+                <p className="text-xs font-black uppercase tracking-widest text-sky-700">Technical showcase</p>
+                <h2 className="mt-2 text-2xl font-black text-slate-900">Backend Mode</h2>
+                <p className="mt-3 leading-7 text-slate-600">
+                  Explore the verified architecture, APIs, database, ML service, Docker, CI/CD, and testing.
+                </p>
+              </div>
+              <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-5 text-sm font-black text-sky-800">
+                <span>Open DevOps control center</span><span className="transition-transform group-hover:translate-x-1">→</span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   return (
     <AppShell pageTitle="National Agricultural Services Portal">

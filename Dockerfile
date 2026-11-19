@@ -16,6 +16,8 @@ WORKDIR /app
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY frontend/ ./
+COPY services/ /services/
+COPY packages/ /packages/
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production

@@ -1,23 +1,18 @@
-version: "3.8"
-
 services:
-  # 1. AgriProfit Next.js Web App
   app:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: agriprofit_app
     restart: always
-    ports:
-      - "3000:3000"
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_APP_URL=http://localhost:3000
-      - DATABASE_URL=postgresql://agriprofit_admin:agriprofit_secure_pass@postgres:5432/agriprofit
+      - NEXT_PUBLIC_APP_URL=${NEXT_PUBLIC_APP_URL:-http://localhost}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-agriprofit_admin}:${POSTGRES_PASSWORD:-agriprofit_secure_pass}@postgres:5432/${POSTGRES_DB:-agriprofit}
       - POSTGIS_ENABLED=true
       - REDIS_URL=redis://redis:6379
       - ML_SERVICE_URL=http://ml:8000
-      - JWT_SECRET=production_super_secret_signing_key_change_me_before_deploying_in_prod
+      - JWT_SECRET=${JWT_SECRET:-change-this-development-secret-before-deployment}
       - SESSION_COOKIE_NAME=agriprofit_session
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       - NEXT_PUBLIC_GOOGLE_MAPS_API_KEY=${NEXT_PUBLIC_GOOGLE_MAPS_API_KEY:-}
@@ -30,18 +25,21 @@ services:
         condition: service_started
     networks:
       - agriprofit_net
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O - http://127.0.0.1:3000/api/health >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
 
-  # 2. Managed PostgreSQL with PostGIS Spatial Extension
   postgres:
     image: postgis/postgis:16-3.4-alpine
     container_name: agriprofit_postgres
     restart: always
     environment:
-      POSTGRES_USER: agriprofit_admin
-      POSTGRES_PASSWORD: agriprofit_secure_pass
-      POSTGRES_DB: agriprofit
-    ports:
-      - "5432:5432"
+      POSTGRES_USER: ${POSTGRES_USER:-agriprofit_admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agriprofit_secure_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-agriprofit}
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./database/init_consolidated.sql:/docker-entrypoint-initdb.d/init.sql
@@ -53,27 +51,51 @@ services:
     networks:
       - agriprofit_net
 
-  # 3. Redis Cache for Session & Rate Limiting
   redis:
     image: redis:7-alpine
     container_name: agriprofit_redis
     restart: always
-    ports:
-      - "6379:6379"
     volumes:
       - redisdata:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     networks:
       - agriprofit_net
 
-  # 4. Machine Learning & Price/Yield Forecasting Microservice
   ml:
     build:
       context: ./ml-service
       dockerfile: Dockerfile
     container_name: agriprofit_ml
     restart: always
+    environment:
+      - ML_PORT=8000
+      - ML_HOST=0.0.0.0
+    healthcheck:
+      test: ["CMD-SHELL", "python -c 'import urllib.request; urllib.request.urlopen(\"http://127.0.0.1:8000/health\", timeout=3)' >/dev/null 2>&1 || exit 1"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - agriprofit_net
+
+  nginx:
+    image: nginx:alpine
+    container_name: agriprofit_nginx
+    restart: always
     ports:
-      - "8000:8000"
+      - "${PUBLIC_HTTP_PORT:-8080}:80"
+    volumes:
+      - ./infrastructure/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      app:
+        condition: service_healthy
+      ml:
+        condition: service_healthy
     networks:
       - agriprofit_net
 
